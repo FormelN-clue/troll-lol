@@ -3,7 +3,7 @@ import streamlit as st
 # Titel der Webseite
 st.title("Wellcome to troll lol 🤡")
 
-st.write("Wähle eine Option aus, um das Video direkt hier abzuspielen:")
+st.write("choose your troll:")
 
 # Initialisiere eine Variable im Hintergrund, um sich die Auswahl zu merken
 if "auswahl" not in st.session_state:
