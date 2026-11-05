@@ -31,7 +31,7 @@ with col4:
 # Hier wird das Video direkt eingebettet, sobald ein Button geklickt wurde
 if st.session_state.auswahl == "1":
     st.success("Du wurdest gerickrollt! 🕺")
-    st.video("https://youtube.com/shorts/_6HzLIJPH2A?si=XX9jQaweiCZybxy9", autoplay=True)
+    st.video("https://youtu.be/dQw4w9WgXcQ?si=z-os8sV2bCnkoSZ1", autoplay=True)
 
 elif st.session_state.auswahl == "2":
     st.success("SIX SEVEN! 🗣️🔥")
