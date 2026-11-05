@@ -3,24 +3,44 @@ import streamlit as st
 # Titel der Webseite
 st.title("Zahlen-Auswahl Web App 🚀")
 
-st.write("Klicke auf eine Option, um das Video zu öffnen:")
+st.write("Wähle eine Option aus, um das Video direkt hier abzuspielen:")
 
-# Erstellt 4 Spalten nebeneinander für die Buttons
+# Initialisiere eine Variable im Hintergrund, um sich die Auswahl zu merken
+if "auswahl" not in st.session_state:
+    st.session_state.auswahl = None
+
+# Erstellt 4 Buttons nebeneinander
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    # Ein echter Link, der wie ein Button aussieht und niemals blockiert wird
-    st.link_button("Option 1 🕺", "https://youtube.com/shorts/_6HzLIJPH2A?si=ihaMs0SZ_20ysJCt")
-    st.caption("Rickroll")
+    if st.button("Option 1 🕺"):
+        st.session_state.auswahl = "1"
 
 with col2:
-    st.link_button("Option 2 🗣️", "https://youtu.be/L7ejl_Hj3A8?si=xGYJaTvFECtEGGw0")
-    st.caption("SIX SEVEN!")
+    if st.button("Option 2 🗣️"):
+        st.session_state.auswahl = "2"
 
 with col3:
-    st.link_button("Option 3 😮", "https://youtu.be/5Vd3HP87IgU?si=Z49Id8kaEd_zoIOI")
-    st.caption("wass😮")
+    if st.button("Option 3 😮"):
+        st.session_state.auswahl = "3"
 
 with col4:
-    st.link_button("Option 4 🇩🇪", "https://youtu.be/Y9q9ycqFC3o?si=A3N5us-RROp20Bxr")
-    st.caption("auf der heide")
+    if st.button("Option 4 🇩🇪"):
+        st.session_state.auswahl = "4"
+
+# Hier wird das Video direkt eingebettet, sobald ein Button geklickt wurde
+if st.session_state.auswahl == "1":
+    st.success("Du wurdest gerickrollt! 🕺")
+    st.video("https://youtube.com/shorts/_6HzLIJPH2A?si=XX9jQaweiCZybxy9", autoplay=True)
+
+elif st.session_state.auswahl == "2":
+    st.success("SIX SEVEN! 🗣️🔥")
+    st.video("https://youtu.be/L7ejl_Hj3A8?si=gt_nVpqMPvhHHz8B", autoplay=True)
+
+elif st.session_state.auswahl == "3":
+    st.success("wass😮")
+    st.video("https://youtu.be/5Vd3HP87IgU?si=fGuFxuT0FHBxBBI-", autoplay=True)
+
+elif st.session_state.auswahl == "4":
+    st.success("auf der heide 🇩🇪")
+    st.video("https://youtu.be/Y9q9ycqFC3o?si=mg1iqu5rUz3nhEqI", autoplay=True)
