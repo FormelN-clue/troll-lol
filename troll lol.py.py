@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Titel der Webseite
-st.title("Zahlen-Auswahl Web App 🚀")
+st.title("Wellcome to troll lol 🤡")
 
 st.write("Wähle eine Option aus, um das Video direkt hier abzuspielen:")
 
